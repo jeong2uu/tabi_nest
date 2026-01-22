@@ -1,0 +1,44 @@
+Tabi Nest 변경사항 요약 (자동 생성)
+생성 시각: 2026-01-15 01:28:07
+
+요구사항 반영 내용
+1) home.html의 Japan Map 구역을 30%/70% 레이아웃으로 구성
+   - 왼쪽: 지역 카드(이미지/지역정보는 JSON + i18n)
+   - 오른쪽: common/map :: map (japanHigh.svg)
+   - 지도 hover/click 시 왼쪽 카드가 업데이트되고, 지도 색상이 강조됨
+
+2) 전체 홈 디자인 / 글씨 색 / 섹션 구성 개선
+   - 일본 숙소 예매 사이트 느낌(밝은 배경, 카드/섀도우, teal + warm accent)
+   - hero/검색/퀵카드/지도섹션/인기숙소 그리드로 페이지를 '꽉 채움'
+
+3) i18n (ko/ja/en) + navbar 아이콘으로 언어 변경
+   - ?lang=ko|ja|en 로 현재 페이지 유지하면서 언어 변경
+   - CookieLocaleResolver로 1년 유지
+
+수정/추가 파일 목록
+- MODIFIED: src/main/resources/templates/home.html
+- MODIFIED: src/main/resources/templates/common/navbar.html
+- MODIFIED: src/main/resources/templates/common/header.html
+- MODIFIED: src/main/resources/templates/common/map.html
+- MODIFIED: src/main/resources/static/css/style.css
+- MODIFIED: src/main/resources/application.yaml
+- ADDED: src/main/resources/static/data/regions-jp-meta.json
+- ADDED: src/main/resources/static/js/japan-map-home.js
+- ADDED: src/main/resources/messages.properties
+- ADDED: src/main/resources/messages_ko.properties
+- ADDED: src/main/resources/messages_ja.properties
+- ADDED: src/main/resources/messages_en.properties
+- ADDED: src/main/java/com/tabi_nest/config/I18nConfig.java
+- ADDED: src/main/java/com/tabi_nest/common/RegionApiController.java
+
+사용 방법
+- 홈: /home
+- 언어 변경: 현재 URL에 ?lang=ko 또는 ?lang=ja 또는 ?lang=en
+- 지도 지역명 API: /api/regions/names
+- 지도 지역 설명 API: /api/regions/descs
+- 지도 메타(JSON): /data/regions-jp-meta.json
+- 지도 인터랙션 JS: /js/japan-map-home.js
+
+주의/확장 포인트
+- 지역별 이미지/설명은 regions-jp-meta.json + messages_*.properties에서 확장 가능
+- 클릭 시 이동 URL은 japan-map-home.js의 ctaEl.href에서 /accommodations?region=JP-xx 형태로 연결

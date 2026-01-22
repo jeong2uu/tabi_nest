@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<nav th:fragment="navbar" class="main-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <img th:src="@{/images/flags/tabi_logo.png}" style="height: fit-content;
+" alt="Tabi Nest">
+    </div>
+
+    <div class="nav-links">
+      <a th:href="@{/about}" th:text="#{nav.guide}">여행 가이드</a>
+      <a th:href="@{/accommodations}" th:text="#{nav.stays}">숙소 보기</a>
+      <a th:href="@{/blog}" th:text="#{nav.blog}">여행 블로그</a>
+      <a th:href="@{/contact}" th:text="#{nav.contact}">문의</a>
+    </div>
+
+    <!-- Language switch -->
+
+    <div class="nav-actions">
+      <!-- Language dropdown (no reload) -->
+      <div class="btn-group">
+        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img id="langFlag" class="lang-btn" th:src="@{/images/flags/kr.svg}" alt="Korea">
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 lang-item"
+               href="javascript:void(0)" data-lang="ko">
+              <img th:src="@{/images/flags/kr.svg}" alt="KR"
+                   style="width:18px; height:18px; border-radius:4px;">
+              <span>한국어</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 lang-item"
+               href="javascript:void(0)" data-lang="ja">
+              <img th:src="@{/images/flags/jp.svg}" alt="JP"
+                   style="width:18px; height:18px; border-radius:4px;">
+              <span>日本語</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 lang-item"
+               href="javascript:void(0)" data-lang="en">
+              <img th:src="@{/images/flags/us.svg}" alt="US"
+                   style="width:18px; height:18px; border-radius:4px;">
+              <span>English</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Auth buttons (modal) -->
+    <button id="navLoginBtn" class="nav-auth-link nav-auth-link--ghost" type="button"
+            data-bs-toggle="modal" data-bs-target="#loginModal" data-i18n="nav.login">
+      로그인
+    </button>
+    <button id="navSignupBtn" class="nav-auth-link nav-auth-link--primary" type="button"
+            data-bs-toggle="modal" data-bs-target="#signupModal" data-i18n="nav.signup">
+      회원가입
+    </button>
+
+    <!-- Logged-in UI -->
+    <div id="navUserBox" class="nav-user is-hidden" aria-live="polite">
+      <span class="nav-user-name" id="navUserName"></span>
+      <button id="navLogoutBtn" class="nav-logout" type="button" data-i18n="nav.logout">로그아웃</button>
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+    const dd = document.getElementById('langDd');
+    const btn = document.getElementById('langDdBtn');
+    const menu = document.getElementById('langDdMenu');
+    const flag = document.getElementById('langFlag');
+    const code = document.getElementById('langCode');
+
+
+    const flagMap = {
+      ko: "/images/flags/kr.svg",
+      ja: "/images/flags/jp.svg",
+      en: "/images/flags/us.svg"
+    };
+
+    const flagEl = document.getElementById("langFlag");
+
+    document.querySelectorAll(".lang-item").forEach(item => {
+      item.addEventListener("click", async () => {
+        const lang = item.dataset.lang;
+
+        // 언어 변경 (너 프로젝트 방식)
+        if (window.TabiI18n) {
+          await window.TabiI18n.changeLanguage(lang);
+        }
+
+        // navbar 버튼 국기도 변경
+        if (flagEl) flagEl.src = flagMap[lang] || flagMap.ko;
+      });
+    });
+
+    // 처음 로딩 시 현재 언어에 맞게 flag 맞추기
+    window.addEventListener("tabi:i18n-ready", (e) => {
+      const lang = (e.detail && e.detail.lang) || (window.TabiI18n && window.TabiI18n.lang) || "ko";
+      if (flagEl) flagEl.src = flagMap[lang] || flagMap.ko;
+    });
+  })();
+  </script>
+
+  <script th:src="@{/js/auth-modal.js}" defer></script>
+</nav>
+</html>

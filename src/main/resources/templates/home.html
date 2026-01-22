@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title th:text="#{site.name} + ' | ' + #{home.hero.title}">Tabi Nest | 일본 숙소 예약</title>
+
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/style-map-final.css}">
+
+</head>
+
+<body class="page-home">
+<!-- Navbar -->
+<div th:replace="~{common/navbar :: navbar}"></div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1 class="hero-title" data-i18n="home.hero.title">일본 숙소를 더 쉽게, 더 감성적으로</h1>
+      <p class="hero-subtitle" data-i18n="home.hero.subtitle">
+        도시·지역·키워드로 검색하고, 인기 지역을 지도에서 바로 확인하세요.
+      </p>
+
+      <form class="hero-search booking-search" th:action="@{/accommodations}" method="get">
+
+        <!-- 1) 목적지 -->
+        <div class="bs-field bs-field--full">
+          <span class="bs-icon" aria-hidden="true">🔍</span>
+          <input
+                  class="bs-input"
+                  type="text"
+                  name="q"
+                  th:placeholder="#{home.search.placeholder}"
+                  placeholder="예: 오사카, 도쿄, 온천 료칸"
+                  autocomplete="off"
+          />
+        </div>
+
+        <!-- 2) 날짜 (체크인/체크아웃) -->
+        <div class="bs-row">
+          <div class="bs-field">
+            <span class="bs-icon" aria-hidden="true">📅</span>
+            <div class="bs-stack">
+              <label class="bs-label" for="checkin" th:text="#{home.search.checkin}">체크인</label>
+              <input class="bs-input bs-input--date" type="date" id="checkin" name="checkin" required />
+            </div>
+          </div>
+
+          <div class="bs-divider" aria-hidden="true"></div>
+
+          <div class="bs-field">
+            <span class="bs-icon" aria-hidden="true">📅</span>
+            <div class="bs-stack">
+              <label class="bs-label" for="checkout" th:text="#{home.search.checkout}">체크아웃</label>
+              <input class="bs-input bs-input--date" type="date" id="checkout" name="checkout" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) 인원 Dropdown (성인/어린이/반려동물) -->
+        <div class="bs-field bs-field--select" id="guestField">
+          <span class="bs-icon" aria-hidden="true">👤</span>
+
+          <!-- 화면 표시용 -->
+          <button type="button" class="bs-select-trigger" id="guestTrigger" aria-expanded="false">
+            <div class="bs-stack">
+              <div class="bs-title" th:text="#{home.search.guestsTitle}">인원</div>
+              <div id="guestSummary"
+                   data-summary-template="[[#{home.search.summary}]]">
+              </div>
+            </div>
+            <span class="bs-caret" aria-hidden="true">▾</span>
+          </button>
+
+          <!-- 백엔드로 전달되는 실제 값 -->
+          <input type="hidden" name="adults" id="adultsInput" value="1" />
+          <input type="hidden" name="children" id="childrenInput" value="0" />
+          <input type="hidden" name="pets" id="petsInput" value="0" />
+
+          <!-- 드롭다운 -->
+          <div class="bs-dropdown" id="guestDropdown" hidden>
+            <div class="bs-dd-item">
+              <div class="bs-dd-left">
+                <span class="bs-dd-emoji">🧑</span>
+                <div>
+                  <div class="bs-dd-title" th:text="#{home.search.adults}">성인</div>
+                  <div class="bs-dd-desc" th:text="#{home.search.adults.desc}">만 13세 이상</div>
+                </div>
+              </div>
+              <div class="bs-counter">
+                <button type="button" class="bs-counter-btn" data-target="adults" data-step="-1">−</button>
+                <span class="bs-counter-val" id="adultsVal">1</span>
+                <button type="button" class="bs-counter-btn" data-target="adults" data-step="1">+</button>
+              </div>
+            </div>
+
+            <div class="bs-dd-item">
+              <div class="bs-dd-left">
+                <span class="bs-dd-emoji">🧒</span>
+                <div>
+                  <div class="bs-dd-title" th:text="#{home.search.children}">어린이</div>
+                  <div class="bs-dd-desc" th:text="#{home.search.children.desc}">만 0–12세</div>
+                </div>
+              </div>
+              <div class="bs-counter">
+                <button type="button" class="bs-counter-btn" data-target="children" data-step="-1">−</button>
+                <span class="bs-counter-val" id="childrenVal">0</span>
+                <button type="button" class="bs-counter-btn" data-target="children" data-step="1">+</button>
+              </div>
+            </div>
+
+            <div class="bs-dd-item">
+              <div class="bs-dd-left">
+                <span class="bs-dd-emoji">🐾</span>
+                <div>
+                  <div class="bs-dd-title" th:text="#{home.search.pets}">반려동물</div>
+                  <div class="bs-dd-desc" th:text="#{home.search.pets.desc}">동반 가능 숙소만</div>
+                </div>
+              </div>
+              <div class="bs-counter">
+                <button type="button" class="bs-counter-btn" data-target="pets" data-step="-1">−</button>
+                <span class="bs-counter-val" id="petsVal">0</span>
+                <button type="button" class="bs-counter-btn" data-target="pets" data-step="1">+</button>
+              </div>
+            </div>
+
+            <button type="button" class="bs-dd-close" id="guestDone" th:text="#{home.search.done}">
+              완료
+            </button>
+          </div>
+        </div>
+
+        <!-- 4) 검색 버튼 -->
+        <button class="hero-search-btn bs-submit" type="submit" th:text="#{home.search.button}">
+          검색하기
+        </button>
+      </form>
+
+      <script>
+        (function(){
+          const trigger = document.getElementById('guestTrigger');
+          const dropdown = document.getElementById('guestDropdown');
+          const doneBtn = document.getElementById('guestDone');
+          const summary = document.getElementById('guestSummary');
+
+          const adultsVal = document.getElementById('adultsVal');
+          const childrenVal = document.getElementById('childrenVal');
+          const petsVal = document.getElementById('petsVal');
+
+          const adultsInput = document.getElementById('adultsInput');
+          const childrenInput = document.getElementById('childrenInput');
+          const petsInput = document.getElementById('petsInput');
+
+          const state = { adults: 1, children: 0, pets: 0 };
+
+          function t(key){ return (window.TabiI18n && window.TabiI18n.t) ? window.TabiI18n.t(key) : key; }
+          function lang(){ return (window.TabiI18n && window.TabiI18n.lang) ? window.TabiI18n.lang : (document.documentElement.lang||'ko').slice(0,2); }
+
+          function label(baseKey, count){
+            const l = lang();
+            if (l === 'en') {
+              const rule = new Intl.PluralRules('en').select(count);
+              return t(rule === 'one' ? `${baseKey}.one` : `${baseKey}.other`);
+            }
+            return t(`${baseKey}.one`);
+          }
+
+          function apply(tpl, a, b, c){
+            return tpl.replaceAll('{0}', String(a)).replaceAll('{1}', String(b)).replaceAll('{2}', String(c ?? ''));
+          }
+
+          function renderSummary(){
+            const tpl = t('home.search.summary.item');
+            const joiner = t('home.search.summary.joiner');
+            const unitPeople = t('home.search.unit.people');
+            const unitPets = t('home.search.unit.pets');
+
+            const items = [
+              apply(tpl, label('home.search.adults', state.adults), state.adults, unitPeople),
+              apply(tpl, label('home.search.children', state.children), state.children, unitPeople),
+              apply(tpl, label('home.search.pets', state.pets), state.pets, unitPets),
+            ];
+            summary.textContent = items.join(joiner);
+          }
+
+          function sync(){
+            adultsVal.textContent = state.adults;
+            childrenVal.textContent = state.children;
+            petsVal.textContent = state.pets;
+
+            adultsInput.value = state.adults;
+            childrenInput.value = state.children;
+            petsInput.value = state.pets;
+
+            renderSummary();
+          }
+
+          function open(){ dropdown.hidden = false; trigger.setAttribute('aria-expanded','true'); }
+          function close(){ dropdown.hidden = true; trigger.setAttribute('aria-expanded','false'); }
+          function toggle(){ dropdown.hidden ? open() : close(); }
+
+          trigger.addEventListener('click', toggle);
+          doneBtn.addEventListener('click', close);
+
+          document.querySelectorAll('.bs-counter-btn').forEach(btn=>{
+            btn.addEventListener('click', ()=>{
+              const target = btn.dataset.target;
+              const step = parseInt(btn.dataset.step,10);
+              const min = (target === 'adults') ? 1 : 0;
+              state[target] = Math.max(min, Math.min(20, state[target] + step));
+              sync();
+            });
+          });
+
+          document.addEventListener('click', (e)=>{
+            if(!dropdown.hidden){
+              const within = e.target.closest('#guestField');
+              if(!within) close();
+            }
+          });
+
+          window.addEventListener('tabi:lang-changed', ()=>{
+            if(window.TabiI18n) window.TabiI18n.applyTranslations(document);
+            renderSummary();
+          });
+          window.addEventListener('tabi:i18n-ready', ()=>{
+            if(window.TabiI18n) window.TabiI18n.applyTranslations(document);
+            sync();
+          });
+
+          // initial
+          sync();
+        })();
+      </script>
+
+      <div class="hero-badges">
+        <span class="badge-pill">Ryokan</span>
+        <span class="badge-pill">Onsen</span>
+        <span class="badge-pill">City Hotel</span>
+        <span class="badge-pill">Family</span>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="hero-collage">
+        <img th:src="@{/images/banner1.jpg}" alt="Japan banner 1" />
+        <img th:src="@{/images/Japan_Tokyo.jpg}" alt="Tokyo" />
+        <img th:src="@{/images/Gyoto.jpg}" alt="Kyoto" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick cards -->
+<section class="container section section-tight">
+  <div class="quick-grid">
+    <article class="quick-card">
+      <div class="quick-title">Best Deals</div>
+      <div class="quick-desc">Weekly curated discounts</div>
+    </article>
+    <article class="quick-card">
+      <div class="quick-title">New Ryokan</div>
+      <div class="quick-desc">Freshly listed stays</div>
+    </article>
+    <article class="quick-card">
+      <div class="quick-title">Near Station</div>
+      <div class="quick-desc">Walkable & convenient</div>
+    </article>
+    <article class="quick-card">
+      <div class="quick-title">Onsen Picks</div>
+      <div class="quick-desc">Hot spring essentials</div>
+    </article>
+  </div>
+</section>
+
+<!-- 1번: Japan map section with left card -->
+<section class="container section" id="japanMapSection">
+  <div class="section-head">
+    <h2 class="section-title" th:text="#{home.map.title}">지역별 추천 숙소</h2>
+    <p class="section-help" th:text="#{home.map.help}">지도의 지역에 마우스를 올리면 왼쪽 카드가 바뀝니다.</p>
+  </div>
+
+  <div class="map-layout map-layout--final">
+    <!-- LEFT -->
+    <aside class="region-panel" id="regionPanel">
+      <div class="region-card region-card--fill">
+        <div class="region-card-media">
+          <img id="regionImage" th:src="@{/images/Japan_Tokyo.jpg}" alt="Region image"/>
+        </div>
+
+        <div class="region-card-body">
+          <div class="region-card-kicker">Japan</div>
+          <h3 class="region-card-title" id="regionTitle">—</h3>
+          <p class="region-card-desc" id="regionDesc">지도에서 지역을 선택하세요.</p>
+
+          <a class="region-card-cta" id="regionCta" href="#" th:text="#{home.regionCard.cta}">
+            이 지역 숙소 보기
+          </a>
+        </div>
+      </div>
+
+      <div class="region-mini-list" id="regionMiniList">
+        <div class="mini-item">
+          <div class="mini-label">Tip</div>
+          <div class="mini-value">Hover → info</div>
+        </div>
+        <div class="mini-item">
+          <div class="mini-label">Click</div>
+          <div class="mini-value">Pin region</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT -->
+    <div class="map-panel map-panel--final">
+      <!-- Zoom controls (top-right) -->
+      <div class="map-controls" aria-label="Map zoom controls">
+        <button type="button" class="map-btn" id="zoomInBtn" title="Zoom in">＋</button>
+        <button type="button" class="map-btn" id="zoomOutBtn" title="Zoom out">－</button>
+        <button type="button" class="map-btn" id="zoomResetBtn" title="Reset">⟳</button>
+      </div>
+
+      <div class="map-center">
+        <div th:replace="~{/common/map :: map}"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Popular stays -->
+<section class="container section">
+  <div class="section-head">
+    <h2 class="section-title" data-i18n="home.popular.title">인기 일본 숙소</h2>
+    <p class="section-help">A selection of stays users love</p>
+  </div>
+
+  <div class="stay-grid">
+    <article class="stay-card">
+      <img th:src="@{/images/banner3.jpg}" alt="Stay" />
+      <div class="stay-body">
+        <div class="stay-title">City View Hotel</div>
+        <div class="stay-meta">Tokyo · 4.6 ★</div>
+      </div>
+    </article>
+    <article class="stay-card">
+      <img th:src="@{/images/banner4.jpg}" alt="Stay" />
+      <div class="stay-body">
+        <div class="stay-title">Onsen Ryokan</div>
+        <div class="stay-meta">Hakone · 4.8 ★</div>
+      </div>
+    </article>
+    <article class="stay-card">
+      <img th:src="@{/images/banner2.jpg}" alt="Stay" />
+      <div class="stay-body">
+        <div class="stay-title">Minimal Stay</div>
+        <div class="stay-meta">Osaka · 4.5 ★</div>
+      </div>
+    </article>
+    <article class="stay-card">
+      <img th:src="@{/images/banner1.jpg}" alt="Stay" />
+      <div class="stay-body">
+        <div class="stay-title">Family Suite</div>
+        <div class="stay-meta">Fukuoka · 4.4 ★</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Auth modals (Login / Signup) -->
+<div th:replace="~{/common/auth-modals :: authModals}"></div>
+
+<!-- Footer -->
+<div th:replace="~{common/footer :: footer}"></div>
+
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/japan-map-home.js}" defer></script>
+<script th:src="@{/js/i18n.js}" defer></script>
+</body>
+</html>

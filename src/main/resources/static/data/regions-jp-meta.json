@@ -1,0 +1,331 @@
+[
+  {
+    "id": "JP-01",
+    "image": "/images/banner1.jpg",
+    "nameKey": "region.JP-01.name",
+    "titleKey": "region.JP-01.title",
+    "descKey": "region.JP-01.desc"
+  },
+  {
+    "id": "JP-02",
+    "image": "/images/banner1.jpg",
+    "nameKey": "region.JP-02.name",
+    "titleKey": "region.JP-02.title",
+    "descKey": "region.JP-02.desc"
+  },
+  {
+    "id": "JP-03",
+    "image": "/images/banner1.jpg",
+    "nameKey": "region.JP-03.name",
+    "titleKey": "region.JP-03.title",
+    "descKey": "region.JP-03.desc"
+  },
+  {
+    "id": "JP-04",
+    "image": "/images/banner1.jpg",
+    "nameKey": "region.JP-04.name",
+    "titleKey": "region.JP-04.title",
+    "descKey": "region.JP-04.desc"
+  },
+  {
+    "id": "JP-05",
+    "image": "/images/banner1.jpg",
+    "nameKey": "region.JP-05.name",
+    "titleKey": "region.JP-05.title",
+    "descKey": "region.JP-05.desc"
+  },
+  {
+    "id": "JP-06",
+    "image": "/images/banner1.jpg",
+    "nameKey": "region.JP-06.name",
+    "titleKey": "region.JP-06.title",
+    "descKey": "region.JP-06.desc"
+  },
+  {
+    "id": "JP-07",
+    "image": "/images/banner1.jpg",
+    "nameKey": "region.JP-07.name",
+    "titleKey": "region.JP-07.title",
+    "descKey": "region.JP-07.desc"
+  },
+  {
+    "id": "JP-08",
+    "image": "/images/Japan_Tokyo.jpg",
+    "nameKey": "region.JP-08.name",
+    "titleKey": "region.JP-08.title",
+    "descKey": "region.JP-08.desc"
+  },
+  {
+    "id": "JP-09",
+    "image": "/images/Japan_Tokyo.jpg",
+    "nameKey": "region.JP-09.name",
+    "titleKey": "region.JP-09.title",
+    "descKey": "region.JP-09.desc"
+  },
+  {
+    "id": "JP-10",
+    "image": "/images/Japan_Tokyo.jpg",
+    "nameKey": "region.JP-10.name",
+    "titleKey": "region.JP-10.title",
+    "descKey": "region.JP-10.desc"
+  },
+  {
+    "id": "JP-11",
+    "image": "/images/Japan_Tokyo.jpg",
+    "nameKey": "region.JP-11.name",
+    "titleKey": "region.JP-11.title",
+    "descKey": "region.JP-11.desc"
+  },
+  {
+    "id": "JP-12",
+    "image": "/images/Japan_Tokyo.jpg",
+    "nameKey": "region.JP-12.name",
+    "titleKey": "region.JP-12.title",
+    "descKey": "region.JP-12.desc"
+  },
+  {
+    "id": "JP-13",
+    "image": "/images/Japan_Tokyo.jpg",
+    "nameKey": "region.JP-13.name",
+    "titleKey": "region.JP-13.title",
+    "descKey": "region.JP-13.desc"
+  },
+  {
+    "id": "JP-14",
+    "image": "/images/Japan_Tokyo.jpg",
+    "nameKey": "region.JP-14.name",
+    "titleKey": "region.JP-14.title",
+    "descKey": "region.JP-14.desc"
+  },
+  {
+    "id": "JP-15",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-15.name",
+    "titleKey": "region.JP-15.title",
+    "descKey": "region.JP-15.desc"
+  },
+  {
+    "id": "JP-16",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-16.name",
+    "titleKey": "region.JP-16.title",
+    "descKey": "region.JP-16.desc"
+  },
+  {
+    "id": "JP-17",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-17.name",
+    "titleKey": "region.JP-17.title",
+    "descKey": "region.JP-17.desc"
+  },
+  {
+    "id": "JP-18",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-18.name",
+    "titleKey": "region.JP-18.title",
+    "descKey": "region.JP-18.desc"
+  },
+  {
+    "id": "JP-19",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-19.name",
+    "titleKey": "region.JP-19.title",
+    "descKey": "region.JP-19.desc"
+  },
+  {
+    "id": "JP-20",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-20.name",
+    "titleKey": "region.JP-20.title",
+    "descKey": "region.JP-20.desc"
+  },
+  {
+    "id": "JP-21",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-21.name",
+    "titleKey": "region.JP-21.title",
+    "descKey": "region.JP-21.desc"
+  },
+  {
+    "id": "JP-22",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-22.name",
+    "titleKey": "region.JP-22.title",
+    "descKey": "region.JP-22.desc"
+  },
+  {
+    "id": "JP-23",
+    "image": "/images/banner2.jpg",
+    "nameKey": "region.JP-23.name",
+    "titleKey": "region.JP-23.title",
+    "descKey": "region.JP-23.desc"
+  },
+  {
+    "id": "JP-24",
+    "image": "/images/Gyoto.jpg",
+    "nameKey": "region.JP-24.name",
+    "titleKey": "region.JP-24.title",
+    "descKey": "region.JP-24.desc"
+  },
+  {
+    "id": "JP-25",
+    "image": "/images/Gyoto.jpg",
+    "nameKey": "region.JP-25.name",
+    "titleKey": "region.JP-25.title",
+    "descKey": "region.JP-25.desc"
+  },
+  {
+    "id": "JP-26",
+    "image": "/images/Gyoto.jpg",
+    "nameKey": "region.JP-26.name",
+    "titleKey": "region.JP-26.title",
+    "descKey": "region.JP-26.desc"
+  },
+  {
+    "id": "JP-27",
+    "image": "/images/Gyoto.jpg",
+    "nameKey": "region.JP-27.name",
+    "titleKey": "region.JP-27.title",
+    "descKey": "region.JP-27.desc"
+  },
+  {
+    "id": "JP-28",
+    "image": "/images/Gyoto.jpg",
+    "nameKey": "region.JP-28.name",
+    "titleKey": "region.JP-28.title",
+    "descKey": "region.JP-28.desc"
+  },
+  {
+    "id": "JP-29",
+    "image": "/images/Gyoto.jpg",
+    "nameKey": "region.JP-29.name",
+    "titleKey": "region.JP-29.title",
+    "descKey": "region.JP-29.desc"
+  },
+  {
+    "id": "JP-30",
+    "image": "/images/Gyoto.jpg",
+    "nameKey": "region.JP-30.name",
+    "titleKey": "region.JP-30.title",
+    "descKey": "region.JP-30.desc"
+  },
+  {
+    "id": "JP-31",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-31.name",
+    "titleKey": "region.JP-31.title",
+    "descKey": "region.JP-31.desc"
+  },
+  {
+    "id": "JP-32",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-32.name",
+    "titleKey": "region.JP-32.title",
+    "descKey": "region.JP-32.desc"
+  },
+  {
+    "id": "JP-33",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-33.name",
+    "titleKey": "region.JP-33.title",
+    "descKey": "region.JP-33.desc"
+  },
+  {
+    "id": "JP-34",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-34.name",
+    "titleKey": "region.JP-34.title",
+    "descKey": "region.JP-34.desc"
+  },
+  {
+    "id": "JP-35",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-35.name",
+    "titleKey": "region.JP-35.title",
+    "descKey": "region.JP-35.desc"
+  },
+  {
+    "id": "JP-36",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-36.name",
+    "titleKey": "region.JP-36.title",
+    "descKey": "region.JP-36.desc"
+  },
+  {
+    "id": "JP-37",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-37.name",
+    "titleKey": "region.JP-37.title",
+    "descKey": "region.JP-37.desc"
+  },
+  {
+    "id": "JP-38",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-38.name",
+    "titleKey": "region.JP-38.title",
+    "descKey": "region.JP-38.desc"
+  },
+  {
+    "id": "JP-39",
+    "image": "/images/banner3.jpg",
+    "nameKey": "region.JP-39.name",
+    "titleKey": "region.JP-39.title",
+    "descKey": "region.JP-39.desc"
+  },
+  {
+    "id": "JP-40",
+    "image": "/images/banner4.jpg",
+    "nameKey": "region.JP-40.name",
+    "titleKey": "region.JP-40.title",
+    "descKey": "region.JP-40.desc"
+  },
+  {
+    "id": "JP-41",
+    "image": "/images/banner4.jpg",
+    "nameKey": "region.JP-41.name",
+    "titleKey": "region.JP-41.title",
+    "descKey": "region.JP-41.desc"
+  },
+  {
+    "id": "JP-42",
+    "image": "/images/banner4.jpg",
+    "nameKey": "region.JP-42.name",
+    "titleKey": "region.JP-42.title",
+    "descKey": "region.JP-42.desc"
+  },
+  {
+    "id": "JP-43",
+    "image": "/images/banner4.jpg",
+    "nameKey": "region.JP-43.name",
+    "titleKey": "region.JP-43.title",
+    "descKey": "region.JP-43.desc"
+  },
+  {
+    "id": "JP-44",
+    "image": "/images/banner4.jpg",
+    "nameKey": "region.JP-44.name",
+    "titleKey": "region.JP-44.title",
+    "descKey": "region.JP-44.desc"
+  },
+  {
+    "id": "JP-45",
+    "image": "/images/banner4.jpg",
+    "nameKey": "region.JP-45.name",
+    "titleKey": "region.JP-45.title",
+    "descKey": "region.JP-45.desc"
+  },
+  {
+    "id": "JP-46",
+    "image": "/images/banner4.jpg",
+    "nameKey": "region.JP-46.name",
+    "titleKey": "region.JP-46.title",
+    "descKey": "region.JP-46.desc"
+  },
+  {
+    "id": "JP-47",
+    "image": "/images/banner5.jpg",
+    "nameKey": "region.JP-47.name",
+    "titleKey": "region.JP-47.title",
+    "descKey": "region.JP-47.desc"
+  }
+]

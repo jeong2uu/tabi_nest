@@ -1,0 +1,20 @@
+SPA-like Client i18n (No Reload) applied.
+
+What changed:
+- Added static/js/i18n.js: loads i18n bundle via /api/i18n and updates DOM using data-i18n attributes.
+- Added API:
+  - GET /api/i18n?lang=ko|ja|en (returns messages bundle as JSON)
+  - POST /api/i18n/lang?lang=ko|ja|en (sets TABI_LANG cookie for server-side locale usage)
+- Updated templates:
+  - common/navbar.html: language buttons now trigger JS (no reload)
+  - home.html: key texts use data-i18n, placeholders use data-i18n-placeholder
+- Updated map script:
+  - static/js/japan-map-home.js: re-fetches region names/descs using current lang and updates on tabi:lang-changed
+- Updated RegionApiController:
+  - accepts optional lang param and uses it to select Locale (so map updates without reload)
+- Added/ensured messages keys for booking search + pluralized summary.
+
+How to use for new pages:
+- Put text nodes: data-i18n="your.key"
+- Placeholder: data-i18n-placeholder="your.key"
+- Make sure /js/i18n.js is included (globally or per page).

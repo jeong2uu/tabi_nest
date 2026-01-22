@@ -1,0 +1,58 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.0.1'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+description = 'Demo project for Spring Boot'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	implementation 'org.springframework.boot:spring-boot-starter-webservices'
+	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-webservices-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	// lombok
+	compileOnly "org.projectlombok:lombok:1.18.32"
+	annotationProcessor "org.projectlombok:lombok:1.18.32"
+	testCompileOnly "org.projectlombok:lombok:1.18.32"
+	testAnnotationProcessor "org.projectlombok:lombok:1.18.32"
+
+	// Gson
+	implementation "com.google.code.gson:gson:2.10.1"
+
+	// Spring Web (API용)
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// JPA (ORM)
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Password hashing (BCrypt)
+	implementation 'org.springframework.security:spring-security-crypto'
+
+	// MariaDB JDBC Driver ⭐⭐⭐
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+	// 소스 코드 변경시 자동으로 페이지 리로드 해주는 라이브러리
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,284 @@
+{
+  "hokkaido": {
+    "en": "Hokkaido",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "aomori": {
+    "en": "Aomori",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "iwate": {
+    "en": "Iwate",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "miyagi": {
+    "en": "Miyagi",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "akita": {
+    "en": "Akita",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "yamagata": {
+    "en": "Yamagata",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "fukushima": {
+    "en": "Fukushima",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "ibaraki": {
+    "en": "Ibaraki",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "tochigi": {
+    "en": "Tochigi",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "gunma": {
+    "en": "Gunma",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "saitama": {
+    "en": "Saitama",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "chiba": {
+    "en": "Chiba",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "tokyo": {
+    "en": "Tokyo",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "kanagawa": {
+    "en": "Kanagawa",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "niigata": {
+    "en": "Niigata",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "toyama": {
+    "en": "Toyama",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "ishikawa": {
+    "en": "Ishikawa",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "fukui": {
+    "en": "Fukui",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "yamanashi": {
+    "en": "Yamanashi",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "nagano": {
+    "en": "Nagano",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "gifu": {
+    "en": "Gifu",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "shizuoka": {
+    "en": "Shizuoka",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "aichi": {
+    "en": "Aichi",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "mie": {
+    "en": "Mie",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "shiga": {
+    "en": "Shiga",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "kyoto": {
+    "en": "Kyoto",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "osaka": {
+    "en": "Osaka",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "hyogo": {
+    "en": "Hyogo",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "nara": {
+    "en": "Nara",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "wakayama": {
+    "en": "Wakayama",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "tottori": {
+    "en": "Tottori",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "shimane": {
+    "en": "Shimane",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "okayama": {
+    "en": "Okayama",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "hiroshima": {
+    "en": "Hiroshima",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "yamaguchi": {
+    "en": "Yamaguchi",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "tokushima": {
+    "en": "Tokushima",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "kagawa": {
+    "en": "Kagawa",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "ehime": {
+    "en": "Ehime",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "kochi": {
+    "en": "Kochi",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "fukuoka": {
+    "en": "Fukuoka",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "saga": {
+    "en": "Saga",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "nagasaki": {
+    "en": "Nagasaki",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "kumamoto": {
+    "en": "Kumamoto",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "oita": {
+    "en": "Oita",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "miyazaki": {
+    "en": "Miyazaki",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "kagoshima": {
+    "en": "Kagoshima",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  },
+  "okinawa": {
+    "en": "Okinawa",
+    "ja": "未設定",
+    "ko": "미설정",
+    "cities": {}
+  }
+}

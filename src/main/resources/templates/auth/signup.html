@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title data-i18n="auth.signup.title">회원가입</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div th:replace="~{/common/navbar :: navbar}"></div>
+
+<main class="container section">
+  <div class="auth-card">
+    <h1 class="auth-title" data-i18n="auth.signup.title">회원가입</h1>
+    <p class="auth-subtitle" data-i18n="auth.signup.subtitle">몇 분이면 끝나요.</p>
+    <p class="auth-subtitle" data-i18n="auth.modal.hint">상단 버튼이 보이지 않는 환경을 위해 모달을 자동으로 띄웁니다.</p>
+  </div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.bootstrap) {
+      const el = document.getElementById('signupModal');
+      if (el) new window.bootstrap.Modal(el).show();
+    }
+  });
+</script>
+</body>
+</html>
