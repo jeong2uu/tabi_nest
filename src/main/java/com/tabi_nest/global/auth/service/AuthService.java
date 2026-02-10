@@ -1,7 +1,7 @@
-package com.tabi_nest.auth.service;
+package com.tabi_nest.global.auth.service;
 
-import com.tabi_nest.auth.dto.LoginRequest;
-import com.tabi_nest.auth.dto.SignupRequest;
+import com.tabi_nest.global.auth.dto.LoginRequest;
+import com.tabi_nest.global.auth.dto.SignupRequest;
 import com.tabi_nest.user.domain.User;
 import com.tabi_nest.user.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

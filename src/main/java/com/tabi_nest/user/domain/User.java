@@ -5,7 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Data
+@Data // getters / setters
 @Entity
 @Table(
         name = "users",
@@ -63,4 +63,6 @@ public class User {
     public void preUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+
+
 }

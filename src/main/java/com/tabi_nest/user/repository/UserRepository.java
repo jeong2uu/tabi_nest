@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
     boolean existsByEmail(String email);
+
+    java.util.Optional<com.tabi_nest.user.domain.User> findByProviderAndProviderId(String provider, String providerId);
 }

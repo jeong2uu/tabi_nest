@@ -1,4 +1,4 @@
-package com.tabi_nest.config;
+package com.tabi_nest.global.config;
 
 import java.time.Duration;
 import java.util.Locale;

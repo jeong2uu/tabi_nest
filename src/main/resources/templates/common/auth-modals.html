@@ -25,6 +25,26 @@
             <button class="auth-btn" type="submit" data-i18n="auth.login.button">로그인</button>
           </form>
 
+          <!-- OAuth 로그인: Spring Security 표준 엔드포인트로 이동 (리다이렉트 인증 플로우) -->
+          <div class="auth-divider">
+            <span data-i18n="auth.oauth.or">또는</span>
+          </div>
+
+          <div class="oauth-grid">
+            <a class="oauth-btn oauth-btn--kakao" th:href="@{/oauth2/authorization/kakao}">
+              <span class="oauth-ic" aria-hidden="true">💬</span>
+              <span data-i18n="auth.oauth.kakao">카카오로 계속</span>
+            </a>
+            <a class="oauth-btn oauth-btn--naver" th:href="@{/oauth2/authorization/naver}">
+              <span class="oauth-ic" aria-hidden="true">N</span>
+              <span data-i18n="auth.oauth.naver">네이버로 계속</span>
+            </a>
+            <a class="oauth-btn oauth-btn--google" th:href="@{/oauth2/authorization/google}">
+              <span class="oauth-ic" aria-hidden="true">G</span>
+              <span data-i18n="auth.oauth.google">구글로 계속</span>
+            </a>
+          </div>
+
           <div class="auth-footer">
             <span data-i18n="auth.login.noAccount">계정이 없으신가요?</span>
             <button type="button" class="auth-link-btn" data-bs-target="#signupModal" data-bs-toggle="modal" data-i18n="auth.signup.link">회원가입</button>

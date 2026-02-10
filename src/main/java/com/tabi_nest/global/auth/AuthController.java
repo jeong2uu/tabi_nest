@@ -1,4 +1,4 @@
-package com.tabi_nest.auth;
+package com.tabi_nest.global.auth;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
